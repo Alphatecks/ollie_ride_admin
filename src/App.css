@@ -1,0 +1,10 @@
+.css-dip3t8 {
+    background-color: white !important; /* Replace this with your desired color */
+    border: none;
+  }
+  
+  /* Allow SVG icons to have a minimum size of 17px */
+& _svg.size-4 {
+  width: 30px !important; /* Use !important to override other styles */
+  height: 30px !important;
+}
