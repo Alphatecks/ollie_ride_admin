@@ -6,7 +6,7 @@ function Login() {
   return (
     <div className="flex items-center  justify-between pr-[100px]">
       {/* Left Section: Logo taking up half the screen */}
-      <div className="pr-[25px] bg-primary flex h-screen items-center justify-center">
+      <div className="pr-[25px] bg-[#0C3569] flex h-screen items-center justify-center">
         <img
           src={logo}
           alt="logo"

@@ -19,7 +19,7 @@ function RealTimeMap() {
   const [location, setLocation] = useState(center);
 
   return (
-    <div className='mt-9 bg-white pt-[51px] pb-[34px] px-7'>
+    <div className='mt-6 bg-white pt-[31px] pb-[34px] px-7 rounded-[8px]'>
 
       <div className='mb-4 flex justify-between'>
         <p>Real Time Map</p>
@@ -34,7 +34,7 @@ function RealTimeMap() {
                 placeholder={
                   <span
                     style={{ }}
-                    className="font-normal text-[11px]"
+                    className="font-normal text-[11px] "
                   >
                     Driver
                   </span>
