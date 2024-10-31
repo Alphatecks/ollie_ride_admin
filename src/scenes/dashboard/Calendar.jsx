@@ -11,7 +11,10 @@ import ExpandMoreOutlinedIcon from "@mui/icons-material/ExpandMoreOutlined";
 import CalendarMonthOutlinedIcon from "@mui/icons-material/CalendarMonthOutlined";
 
 export function CalendarForm() {
-  const [selectedRange, setSelectedRange] = useState({ start: null, end: null }); // Hold start and end dates
+  const [selectedRange, setSelectedRange] = useState({
+    start: null,
+    end: null,
+  }); // Hold start and end dates
 
   // Helper function to safely format dates
   const formatDate = (date) => {
@@ -51,7 +54,9 @@ export function CalendarForm() {
               <p className="text-[10px] flex">Filter</p>
               {/* Safely display the selected dates */}
               {selectedRange.start && selectedRange.end ? (
-                `${formatDate(selectedRange.start)} - ${formatDate(selectedRange.end)}`
+                `${formatDate(selectedRange.start)} - ${formatDate(
+                  selectedRange.end
+                )}`
               ) : selectedRange.start ? (
                 `${formatDate(selectedRange.start)}`
               ) : (
@@ -71,8 +76,8 @@ export function CalendarForm() {
             mode="range"
             selected={{ from: selectedRange.start, to: selectedRange.end }} // Correctly pass selected range
             onSelect={handleDateSelect} // Handle selection
-            disabled={(date) =>
-              date > new Date() || date < new Date("1900-01-01") // Disable dates out of range
+            disabled={
+              (date) => date > new Date() || date < new Date("1900-01-01") // Disable dates out of range
             }
             initialFocus
           />

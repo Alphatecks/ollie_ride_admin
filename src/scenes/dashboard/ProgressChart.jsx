@@ -4,8 +4,6 @@ import { Select } from "@/components/ui/select";
 import React, { useState } from "react";
 
 const RideSummary = () => {
-
-
   // Array of ride stats
   const rideStats = [
     { label: "Total active rides", value: 60, color: "bg-yellow-400" },
@@ -54,7 +52,7 @@ const RideSummary = () => {
         ))}
       </div>
 
-      {/* Date Selector (Optional) */}
+     
       <div className="mt-6 flex justify-end">
         <Select placeholder="Today" className="2xl:text-base" />
       </div>

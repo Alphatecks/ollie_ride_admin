@@ -9,10 +9,9 @@ import {
   Paper,
   Chip,
   IconButton,
-  Grid,
   Typography,
 } from "@mui/material";
-import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
+import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 
 // Dummy data for the table
 const faqData = [
@@ -47,37 +46,37 @@ const FAQTable = () => {
   return (
     <Paper elevation={3} style={{ padding: "20px", borderRadius: "10px" }}>
       <TableContainer>
-        <Table>
+        <Table sx={{ border: "none" }}>
           <TableHead>
             <TableRow>
-              <TableCell>
+              <TableCell sx={{ borderBottom: "none" }}>
                 <Typography variant="subtitle1" fontWeight="bold">
                   Question
                 </Typography>
               </TableCell>
-              <TableCell>
+              <TableCell sx={{ borderBottom: "none" }}>
                 <Typography variant="subtitle1" fontWeight="bold">
                   Answer
                 </Typography>
               </TableCell>
-              <TableCell>
+              <TableCell sx={{ borderBottom: "none" }}>
                 <Typography variant="subtitle1" fontWeight="bold">
                   Status
                 </Typography>
               </TableCell>
-              <TableCell></TableCell>
+              <TableCell sx={{ borderBottom: "none" }}></TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
             {faqData.map((faq, index) => (
-              <TableRow key={index}>
-                <TableCell>
+              <TableRow key={index} sx={{ borderBottom: "none" }}>
+                <TableCell sx={{ borderBottom: "none" }}>
                   <Typography>{faq.question}</Typography>
                 </TableCell>
-                <TableCell>
+                <TableCell sx={{ borderBottom: "none" }}>
                   <Typography>{faq.answer}</Typography>
                 </TableCell>
-                <TableCell>
+                <TableCell sx={{ borderBottom: "none" }}>
                   <Chip
                     label={faq.status}
                     color={faq.status === "Active" ? "primary" : "error"}
@@ -85,7 +84,7 @@ const FAQTable = () => {
                     style={{ borderRadius: "10px" }}
                   />
                 </TableCell>
-                <TableCell align="right">
+                <TableCell align="right" sx={{ borderBottom: "none" }}>
                   <IconButton>
                     <MoreHorizIcon />
                   </IconButton>

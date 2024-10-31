@@ -69,7 +69,7 @@ const LineChart = ({ isDarkMode }) => {
         max: 800,
         ticks: {
           stepSize: 200,
-          color: isDarkMode ? '#FFFFFF' : '#64748B',
+          color: isDarkMode ? "#FFFFFF" : "#64748B",
           padding: 0,
           font: {
             size: 7,
@@ -108,7 +108,9 @@ const LineChart = ({ isDarkMode }) => {
       <div className="">
         <div className="flex justify-between p-4">
           <div>
-            <h2 className="font-medium mb-2 2xl:text-lg">Total income generated</h2>
+            <h2 className="font-medium mb-2 2xl:text-lg">
+              Total income generated
+            </h2>
             <p className="text-gray-500 mb-4 text-[9px] 2xl:text-sm">
               Sorem ipsum dolor sit amet consectetur
             </p>
@@ -122,9 +124,7 @@ const LineChart = ({ isDarkMode }) => {
               paddingLeft: "3px",
             }}
             placeholder={
-              <span className="font-normal text-[11px] 2xl:text-sm">
-                Today
-              </span>
+              <span className="font-normal text-[11px] 2xl:text-sm">Today</span>
             }
             optionFilterProp="label"
             options={[
@@ -149,11 +149,15 @@ const LineChart = ({ isDarkMode }) => {
         <div className="flex justify-around mb-4">
           <div className="text-center">
             <h3 className="font-medium 2xl:text-lg">$10,500</h3>
-            <p className="text-gray-500 text-[9px] 2xl:text-sm">Earning this month</p>
+            <p className="text-gray-500 text-[9px] 2xl:text-sm">
+              Earning this month
+            </p>
           </div>
           <div className="text-center">
             <h3 className="font-medium 2xl:text-lg">$140,500</h3>
-            <p className="text-gray-500 text-[9px] 2xl:text-sm">Total earnings</p>
+            <p className="text-gray-500 text-[9px] 2xl:text-sm">
+              Total earnings
+            </p>
           </div>
         </div>
       </div>

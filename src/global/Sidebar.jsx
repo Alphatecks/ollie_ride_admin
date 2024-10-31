@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Menu, MenuItem, Sidebar } from "react-pro-sidebar";
-import { Link, useLocation } from "react-router-dom"; // Import Link and useLocation from react-router-dom
+import { useLocation, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { logout } from "../store/authSlice";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import PersonIcon from "@mui/icons-material/Person";
 import AddIcon from "@mui/icons-material/Add";
@@ -10,16 +12,24 @@ import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import ManageAccountsIcon from "@mui/icons-material/ManageAccounts";
 import LogoutIcon from "@mui/icons-material/Logout";
 import MenuIcon from "@mui/icons-material/Menu";
+import { auth } from "../../firebase";
 
 function AdminSidebar() {
   const [isCollapsed, setCollapsed] = useState(false);
-  const [selectedKey, setSelectedKey] = useState("/"); // Set default to the dashboard route
+  const [selectedKey, setSelectedKey] = useState("/");
   const location = useLocation();
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
-  // Update selectedKey whenever the route changes
   useEffect(() => {
     setSelectedKey(location.pathname);
   }, [location.pathname]);
+
+  const handleLogout = () => {
+    dispatch(logout());
+    auth.signOut();
+    navigate("/login");
+  };
 
   const menuItems = [
     { key: "/", label: "Dashboard", icon: <DashboardIcon /> },
@@ -51,38 +61,44 @@ function AdminSidebar() {
       </div>
       <Menu iconShape="circle" className="mt-[50px]">
         {menuItems.map((item) => (
-          <Link key={item.key} to={item.key} style={{ textDecoration: "none" }}>
-            <MenuItem
-              icon={
-                <div
-                  className={`rounded-full ${
-                    selectedKey === item.key ? "" : "bg-transparent"
-                  }`}
-                >
-                  {item.icon}
-                </div>
+          <MenuItem
+            key={item.key}
+            icon={
+              <div
+                className={`rounded-full ${
+                  selectedKey === item.key ? "" : "bg-transparent"
+                }`}
+              >
+                {item.icon}
+              </div>
+            }
+            active={selectedKey === item.key}
+            onClick={() => {
+              if (item.key === "/logout") {
+                handleLogout(); // Handle logout directly here
+              } else {
+                setSelectedKey(item.key);
+                navigate(item.key); // Use navigate to change route
               }
-              active={selectedKey === item.key}
-              onClick={() => setSelectedKey(item.key)}
-              className={`py-2 text-[#0C3569] flex w-full ${
-                selectedKey === item.key
-                  ? "bg-[#8ED7FF4D] text-[#0C3569]"
-                  : "text-[#8095B2]"
-              }`}
-              style={{
-                backgroundColor:
-                  selectedKey === item.key ? "transparent" : "transparent",
-                color: selectedKey === item.key ? "" : "#8095B2",
-                border: "none",
-                width: "100%",
-              }}
-            >
-              {selectedKey === item.key && (
-                <span className="absolute left-0 top-0 h-full w-[4px] bg-[#0C3569]"></span>
-              )}
-              {!isCollapsed && item.label}
-            </MenuItem>
-          </Link>
+            }}
+            className={`py-2 text-[#0C3569] flex w-full ${
+              selectedKey === item.key
+                ? "bg-[#8ED7FF4D] text-[#0C3569]"
+                : "text-[#8095B2]"
+            }`}
+            style={{
+              backgroundColor:
+                selectedKey === item.key ? "transparent" : "transparent",
+              color: selectedKey === item.key ? "" : "#8095B2",
+              border: "none",
+              width: "100%",
+            }}
+          >
+            {selectedKey === item.key && (
+              <span className="absolute left-0 top-0 h-full w-[4px] bg-[#0C3569]"></span>
+            )}
+            {!isCollapsed && item.label}
+          </MenuItem>
         ))}
       </Menu>
       <div className="flex justify-start p-6">
