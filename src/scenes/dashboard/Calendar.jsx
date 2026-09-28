@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { format } from "date-fns"; // format is used to display dates
-import { cn } from "@/lib/utils"; // Utility for classnames
+import { cn } from "@/lib/utils.js"; // Utility for classnames
 import { Calendar } from "@/components/ui/calendar"; // Calendar component
 import {
   Popover,

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import logo from "../assets/Logo.png";
 
 function Register() {
@@ -59,6 +60,12 @@ function Register() {
         <button className="w-full p-[18px] bg-primary text-white text-2xl rounded-lg transition-all hover:bg-blue-700">
           Continue
         </button>
+        <Link
+          to="/privacy"
+          className="text-[13px] text-[#8095B2] hover:underline mt-3"
+        >
+          Privacy policy
+        </Link>
       </form>
     </div>
   )

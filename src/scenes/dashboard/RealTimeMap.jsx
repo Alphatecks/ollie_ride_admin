@@ -1,6 +1,8 @@
 import React, { useState, useCallback } from 'react';
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 import { Select } from "antd";
+import { ChevronDownIcon } from "@radix-ui/react-icons";
+import { useTheme } from "next-themes";
 
 // Define the container style for the map
 const containerStyle = {
@@ -16,6 +18,8 @@ const center = {
 
 function RealTimeMap() {
   const [location, setLocation] = useState(center);
+  const { theme } = useTheme();
+  const isDarkMode = theme === 'dark';
 
   return (
     <div className='mt-9 bg-white pt-[51px] pb-[34px] px-7'>
@@ -53,7 +57,7 @@ function RealTimeMap() {
                   fontSize: "10px",
                 }}
                 suffixIcon={
-                  <ChevronDown
+                  <ChevronDownIcon
                     className={`ml-[-16px] mt-[2px] w-3 h-3 ${
                       isDarkMode ? "text-white" : "text-black "
                     }`}

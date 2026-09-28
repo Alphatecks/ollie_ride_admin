@@ -1,13 +1,120 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* Import Poppins fonts - using absolute paths from public folder */
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-*{
-  font-family: "Poppins", sans-serif;
+@layer base {
+  * {
+    font-family: "Poppins", sans-serif !important;
+  }
+
+  body {
+    font-family: "Poppins", sans-serif !important;
+  }
+
+  h1, h2, h3, h4, h5, h6, p, span, div, button, input, textarea, select, label, a {
+    font-family: "Poppins", sans-serif !important;
+  }
 }
 
+.poppins-font {
+  font-family: "Poppins", sans-serif !important;
+}
 
+/* Override Material-UI Typography */
+.MuiTypography-root,
+.MuiTypography-h1,
+.MuiTypography-h2,
+.MuiTypography-h3,
+.MuiTypography-h4,
+.MuiTypography-h5,
+.MuiTypography-h6,
+.MuiTypography-body1,
+.MuiTypography-body2,
+.MuiTypography-subtitle1,
+.MuiTypography-subtitle2 {
+  font-family: "Poppins", sans-serif !important;
+}
 
+/* Override Material-UI Button */
+.MuiButton-root,
+.MuiButton-text,
+.MuiButton-contained,
+.MuiButton-outlined {
+  font-family: "Poppins", sans-serif !important;
+}
 
+/* Override Material-UI TextField */
+.MuiInputBase-root,
+.MuiInput-root,
+.MuiOutlinedInput-root,
+.MuiFilledInput-root {
+  font-family: "Poppins", sans-serif !important;
+}
+
+.MuiInputBase-input,
+.MuiInput-input,
+.MuiOutlinedInput-input,
+.MuiFilledInput-input {
+  font-family: "Poppins", sans-serif !important;
+}
+
+/* Override Material-UI Dialog */
+.MuiDialog-root,
+.MuiDialogTitle-root,
+.MuiDialogContent-root,
+.MuiDialogContentText-root {
+  font-family: "Poppins", sans-serif !important;
+}
+
+/* Override Material-UI Chip */
+.MuiChip-root,
+.MuiChip-label {
+  font-family: "Poppins", sans-serif !important;
+}
+
+/* Override Ant Design components */
+.ant-select,
+.ant-select-selector,
+.ant-select-selection-item,
+.ant-select-selection-placeholder {
+  font-family: "Poppins", sans-serif !important;
+}
+
+/* Override all text elements in Rental Desk screens */
+[class*="rentalDesk"],
+[class*="rental-desk"] {
+  font-family: "Poppins", sans-serif !important;
+}
