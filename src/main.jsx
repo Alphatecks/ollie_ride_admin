@@ -15,7 +15,7 @@ import UserDatabase from './scenes/userDatabase';
 import UserDetail from './scenes/userDatabase/UserDetail';
 import PasswordReset from './scenes/userDatabase/PasswordReset';
 import RegistrationRequest from './scenes/userDatabase/RegistrationRequest';
-import RideHistory from './scenes/ridehistory';
+import RideHistory from './scenes/rideHistory';
 import Messages from './scenes/message';
 import FAQ from './scenes/faq';
 import Help from './scenes/help';
